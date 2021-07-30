@@ -1,20 +1,20 @@
-obj = {
-    a: 1,
-    b: 2
-  }
-  function getValue(obj) {
-    
-    const newObj = Object.create(obj); 
-    newObj.c = 3
-    newObj.d = 4
-    
-    for (let key in newObj) {
-      if (newObj.hasOwnProperty(key)) {
-        console.log(`Ключ - ${key}, значение - ${newObj[key]}`);
-      }
+const obj = { // забыли ключевое слово перед объявлением переменной
+  a: 1,
+  b: 2
+}
+
+const newObj = Object.create(obj); 
+newObj.c = 3
+newObj.d = 4
+
+function getValue(obj) {
+  for (let key in obj) {
+    if (newObj.hasOwnProperty(key)) {
+      console.log(`Ключ - ${key}, значение - ${obj[key]}`);
     }
   }
+}
     
-  
-  
-  getValue(obj)
+getValue(newObj)
+
+// Сам функционал вывода собственных свойств сделан верно, но функция getValue должна быть реализована иначе. По условию она должна только выводить собственные свойства объекта, создание нового объекта на основе переданного и назначение ему свойств - это лишние действия в функции. Выше исправила
